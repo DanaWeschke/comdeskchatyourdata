@@ -1,0 +1,21 @@
+<!DOCTYPE html> <html> <head> <meta charset="UTF-8"> <title>n8n Chat Integration (Bild vollständig anzeigen)</title> <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet"> <style> :root { /* Hier sorgt 'contain' dafür, dass das Bild nicht oben oder unten beschnitten wird */ --chat--header--background: url('https://www.ccw.eu/fileadmin/user_upload/Logos/Partner/CallOne.png') center center / contain no-repeat; --chat--header--color: #ffffff;
+/* Wenn du eine feste Höhe willst, damit das Bild groß genug ist, kannst du sie hier anpassen: / / --chat--header-height: 250px; */
+
+--chat--color-dark: #000000; --chat--color-light: #ffffff; --chat--color-light-shade-50: #ffffff; --chat--color-light-shade-100: #ffffff;
+
+/* Nachrichten-Hintergrund weiß */ --chat--message--bot--background: #ffffff; --chat--message--bot--color: #000000; --chat--message--user--background: #ffffff; --chat--message--user--color: #000000; --chat--message--pre--background: #ffffff;
+
+/* Chat-Fenster-Größe anpassen, bei Bedarf ändern */ --chat--window--width: 400px; --chat--window--height: 600px;
+
+/* Launcher-Farbe (falls genutzt) */ --chat--toggle--background: #ffffff; --chat--toggle--color: #000000; }
+
+/* Zusätzliche Sicherheit, damit keine grauen Flächen auftauchen */ .n8n-chat__content, .n8n-chat__body, .n8n-chat__footer, .n8n-chat__window, .n8n-chat__content-wrapper { background-color: #ffffff !important; }
+
+/* Container für den Chat */ #n8n-chat { min-height: 600px; max-height: 1000px; overflow: visible; background-color: #ffffff !important; }
+
+/* Emojis entfernen */ .n8n-chat-trigger__icon, .n8n-chat__input-icon { display: none !important; } </style>
+
+</head> <body> <div id="n8n-chat"></div> <script type="module"> import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+createChat({ webhookUrl: 'https://danaweschke.app.n8n.cloud/webhook/de583aa1-46d4-4a6c-bc3d-94ffb42ce5ad/chat', target: '#n8n-chat', mode: 'inline', showWelcomeScreen: false, defaultLanguage: 'en', initialMessages: [ 'Ich bin Don CallOne' ], i18n: { en: { title: '', subtitle: '', footer: '', getStarted: 'New Conversation', inputPlaceholder: 'Chat with you data.' } } }); </script>
+
+</body> </html>
