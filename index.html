@@ -44,10 +44,11 @@
             display: none !important;
         }
 
-        /* Automatisches Scrollen deaktivieren */
+        /* Automatisches Scrollen deaktivieren, damit das Fenster oben bleibt */
         .n8n-chat__body {
             scroll-behavior: auto !important;
             overflow-anchor: none !important;
+            overscroll-behavior: contain !important;
         }
     </style>
 </head>
@@ -61,7 +62,7 @@
             mode: 'inline',
             showWelcomeScreen: false,
             defaultLanguage: 'en',
-            initialMessages: ['   '],
+            initialMessages: ['    '],
             i18n: {
                 en: {
                     title: '',
