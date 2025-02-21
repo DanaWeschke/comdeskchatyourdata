@@ -6,42 +6,32 @@
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
     <style>
         :root {
-            /* Hier sorgt 'contain' dafür, dass das Bild nicht oben oder unten beschnitten wird */
             --chat--header--background: url('https://www.ccw.eu/fileadmin/user_upload/Logos/Partner/CallOne.png') center center / contain no-repeat;
             --chat--header--color: #ffffff;
-            /* --chat--header-height: 250px; */
-
             --chat--color-dark: #000000;
             --chat--color-light: #ffffff;
             --chat--color-light-shade-50: #ffffff;
             --chat--color-light-shade-100: #ffffff;
-
-            /* Nachrichten-Hintergrund weiß */
             --chat--message--bot--background: #ffffff;
             --chat--message--bot--color: #000000;
             --chat--message--user--background: #ffffff;
             --chat--message--user--color: #000000;
             --chat--message--pre--background: #ffffff;
-
-            /* Chat-Fenster-Größe anpassen */
-            --chat--window--width: 1200px; /* Hier wurde die Breite verdreifacht */
+            --chat--window--width: 600px; /* Halbierte Breite */
             --chat--window--height: 600px;
-
-            /* Launcher-Farbe (falls genutzt) */
             --chat--toggle--background: #ffffff;
             --chat--toggle--color: #000000;
         }
 
-        /* Zusätzliche Sicherheit, damit keine grauen Flächen auftauchen */
         .n8n-chat__content,
         .n8n-chat__body,
         .n8n-chat__footer,
         .n8n-chat__window,
         .n8n-chat__content-wrapper {
             background-color: #ffffff !important;
+            font-size: 75% !important; /* Schriftgröße um 25% reduziert für bessere Wirkung */
         }
 
-        /* Container für den Chat */
         #n8n-chat {
             min-height: 600px;
             max-height: 1000px;
@@ -49,10 +39,15 @@
             background-color: #ffffff !important;
         }
 
-        /* Emojis entfernen */
         .n8n-chat-trigger__icon,
         .n8n-chat__input-icon {
             display: none !important;
+        }
+
+        /* Automatisches Scrollen deaktivieren */
+        .n8n-chat__body {
+            scroll-behavior: auto !important;
+            overflow-anchor: none !important;
         }
     </style>
 </head>
